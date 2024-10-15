@@ -16,5 +16,5 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-//    @ManyToOne 에는 mappedBy() 가 없음! 그래서 생략!
+//    @ManyToMany 에도 mappedBy() 가 없음! 근데 왜 생략?? -> Spring이 알아서 만들어 줌! 대신에 관리가 어려움 ㅠㅠ
 }
