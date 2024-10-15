@@ -16,5 +16,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-//    @ManyToMany 에도 mappedBy() 가 없음! 근데 왜 생략?? -> Spring이 알아서 만들어 줌! 대신에 관리가 어려움 ㅠㅠ
+
+    @ManyToMany(mappedBy = "userList")
+    private List<Food> foodList = new ArrayList<>();
+
+    public void addFoodList(Food food) {
+        this.foodList.add(food);
+        food.getUserList().add(this); // 외래 키(연관 관계) 설정
+    }
 }
