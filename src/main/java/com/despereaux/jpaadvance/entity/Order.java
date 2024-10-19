@@ -18,14 +18,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "food_id")
-    private Food food;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime orderDate;
