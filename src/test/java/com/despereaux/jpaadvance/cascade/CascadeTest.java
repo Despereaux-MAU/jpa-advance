@@ -90,7 +90,7 @@ public class CascadeTest {
 
     @Test
     @Transactional
-    @Rollback(false)
+    @Rollback(value = false)
     @DisplayName("영속성 전이 삭제")
     void test4() {
         // 고객 Robbie를 조회합니다.
